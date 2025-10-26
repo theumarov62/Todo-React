@@ -6,13 +6,11 @@ export default function Todo() {
   const [editData, setEditData] = useState({ title: "", description: "" });
   const [deleteIndex, setDeleteIndex] = useState(null);
 
-  // LocalStorage'dan o‘qish
   useEffect(() => {
     const saved = localStorage.getItem("todos");
     if (saved) setTodos(JSON.parse(saved));
   }, []);
 
-  // LocalStorage'ga saqlash
   useEffect(() => {
     localStorage.setItem("todos", JSON.stringify(todos));
   }, [todos]);
