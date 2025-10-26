@@ -17,7 +17,7 @@ export default function Todo() {
     localStorage.setItem("todos", JSON.stringify(todos));
   }, [todos]);
 
-  // Qo‘shish
+  // Add Todo
   const Submit = (e) => {
     e.preventDefault();
     const formData = new FormData(e.target);
@@ -29,13 +29,13 @@ export default function Todo() {
     e.target.reset();
   };
 
-  // Edit ochish
+  // Edit Modal Open
   const Edit = (index) => {
     setEditIndex(index);
     setEditData(todos[index]);
   };
 
-  // Edit saqlash
+  // Edit Save
   const EditSave = () => {
     const updated = [...todos];
     updated[editIndex] = editData;
@@ -43,12 +43,11 @@ export default function Todo() {
     setEditIndex(null);
   };
 
-  // Delete modal ochish
+  // Delete Modal Open
   const Delete = (index) => {
     setDeleteIndex(index);
   };
-
-  // Delete tasdiqlash
+  // Delete Save
   const DeleteConfirm = () => {
     setTodos((prev) => prev.filter((_, i) => i !== deleteIndex));
     setDeleteIndex(null);
