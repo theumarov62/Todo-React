@@ -45,7 +45,7 @@ export default function Todo() {
   const Delete = (index) => {
     setDeleteIndex(index);
   };
-  
+
   // Delete Save
   const DeleteConfirm = () => {
     setTodos((prev) => prev.filter((_, i) => i !== deleteIndex));
@@ -98,13 +98,13 @@ export default function Todo() {
                 <div className="flex gap-2">
                   <button
                     onClick={() => Edit(i)}
-                    className="text-blue-600 border border-blue-600 px-2 rounded hover:bg-blue-600 hover:text-white transition"
+                    className="text-blue-600 border cursor-pointer border-blue-600 px-2 rounded hover:bg-blue-600 hover:text-white transition"
                   >
                     Edit
                   </button>
                   <button
                     onClick={() => Delete(i)}
-                    className="text-red-600 border border-red-600 px-2 rounded hover:bg-red-600 hover:text-white transition"
+                    className="text-red-600 border cursor-pointer border-red-600 px-2 rounded hover:bg-red-600 hover:text-white transition"
                   >
                     Delete
                   </button>
