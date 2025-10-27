@@ -45,6 +45,7 @@ export default function Todo() {
   const Delete = (index) => {
     setDeleteIndex(index);
   };
+  
   // Delete Save
   const DeleteConfirm = () => {
     setTodos((prev) => prev.filter((_, i) => i !== deleteIndex));
